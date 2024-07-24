@@ -42,7 +42,7 @@ const SendMessage = ({ scroll }) => {
         />
         <button
           type="submit"
-          className=" border rounded-full ml-2 text-xl p-2 bg-blue-600 text-white -mb-16"
+          className=" border rounded-full ml-2 text-2xl p-2 bg-blue-600 text-white "
         >
           <IoSend />
         </button>
