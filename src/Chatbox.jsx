@@ -36,14 +36,10 @@ const Chatbox = () => {
     return () => unSubscribe;
   }, []);
 
-  const handleDelete = async (id) => {
-    await deleteDoc(doc(db, "messages", id));
-  };
-
   return (
     <div className="text-3xl text-center flex flex-col bg-teal-500/70">
       {messages?.map((message) => (
-        <Message key={message.id} message={message} onDelete={handleDelete()} />
+        <Message key={message.id} message={message} />
       ))}
       <div ref={scroll}></div>
       <SendMessage scroll={scroll} />
