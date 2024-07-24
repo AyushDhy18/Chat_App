@@ -33,17 +33,21 @@ const Message = ({ message }) => {
             {message.name}
           </h2>
 
-          <button
-            onClick={() => {
-              handleDelete(message.id);
-            }}
-            className="relative ml-3 -mt-2 group"
-          >
-            <MdOutlineCancel className="text-sm" />
-            <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-16 p-1 bg-black text-white text-xs text-center rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              Delete
-            </span>
-          </button>
+          {message.uid === user?.uid ? (
+            <button
+              onClick={() => {
+                handleDelete(message.id);
+              }}
+              className="relative ml-3 -mt-2 group"
+            >
+              <MdOutlineCancel className="text-sm" />
+              <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-16 p-1 bg-black text-white text-xs text-center rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Delete
+              </span>
+            </button>
+          ) : (
+            <></>
+          )}
         </div>
 
         <p className="text-sm text-left text-gray-800">{message.text}</p>
